@@ -1,0 +1,765 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Dela+Gothic+One&display=swap');
+
+
+/* ======================================== */
+/* GENERAL */
+/* ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    padding-top: 78px;
+
+    font-family:
+        "Archivo",
+        sans-serif;
+
+    color: #f8f1fa;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #652b7b 0%,
+            #451652 48%,
+            #270a31 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+
+/* ======================================== */
+/* HEADER */
+/* ======================================== */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding:
+        0 4%;
+
+    background:
+        rgba(
+            42,
+            8,
+            53,
+            0.78
+        );
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.logo {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+nav {
+    display: flex;
+
+    gap: 40px;
+}
+
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+
+nav a.active {
+    opacity: 0.55;
+}
+
+
+
+/* ======================================== */
+/* WORK INTRO */
+/* ======================================== */
+
+.work-intro {
+    width: 100%;
+
+    padding:
+        110px 5%
+        90px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        minmax(
+            420px,
+            1.3fr
+        );
+
+    gap: 80px;
+
+    align-items: end;
+}
+
+
+.work-intro h1 {
+    margin: 0;
+
+    font-family:
+        "Dela Gothic One",
+        sans-serif;
+
+    font-size:
+        clamp(
+            52px,
+            6vw,
+            90px
+        );
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+
+
+/* ======================================== */
+/* CATEGORY LINKS */
+/* ======================================== */
+
+.work-categories {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    gap:
+        12px 24px;
+}
+
+
+.work-categories a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size:
+        16px;
+
+    opacity: 0.7;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+.work-categories a:hover {
+    opacity: 1;
+}
+
+
+
+/* ======================================== */
+/* MARQUEE */
+/* ======================================== */
+
+.work-marquee {
+    width: 100%;
+
+    padding:
+        30px 0
+        150px;
+
+    overflow: hidden;
+}
+
+
+.marquee-window {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+.marquee-track {
+    display: flex;
+
+    width: max-content;
+
+    animation:
+        workMarquee
+        22s
+        linear
+        infinite;
+}
+
+
+.marquee-window:hover
+.marquee-track {
+    animation-play-state:
+        paused;
+}
+
+
+.marquee-group {
+    display: flex;
+
+    gap: 24px;
+
+    padding-right: 24px;
+}
+
+
+.marquee-card {
+    flex:
+        0 0 auto;
+
+    width:
+        clamp(
+            280px,
+            27vw,
+            450px
+        );
+
+    text-decoration: none;
+}
+
+
+.marquee-card .placeholder {
+    width: 100%;
+
+    aspect-ratio:
+        4 / 3;
+}
+
+
+@keyframes workMarquee {
+
+    from {
+        transform:
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateX(-50%);
+    }
+
+}
+
+
+
+/* ======================================== */
+/* PLACEHOLDERS */
+/* ======================================== */
+
+.placeholder {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.35
+        );
+
+    font-size: 14px;
+}
+
+
+
+/* ======================================== */
+/* WORK SECTIONS */
+/* ======================================== */
+
+.work-section {
+    width: 100%;
+
+    padding:
+        40px 5%
+        150px;
+}
+
+
+.section-header {
+    margin-bottom: 55px;
+}
+
+
+.section-header h2 {
+    margin: 0;
+
+    font-family:
+        "Dela Gothic One",
+        sans-serif;
+
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            58px
+        );
+
+    line-height: 1.1;
+
+    font-weight: 400;
+}
+
+
+
+/* ======================================== */
+/* PROJECT GRID */
+/* ======================================== */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        45px 24px;
+}
+
+
+.project-grid-three {
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+}
+
+
+
+/* ======================================== */
+/* PROJECT CARD */
+/* ======================================== */
+
+.project-card {
+    min-width: 0;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.project-image {
+    width: 100%;
+
+    aspect-ratio:
+        4 / 3;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.project-card:hover
+.project-image {
+    transform:
+        scale(0.985);
+}
+
+
+
+/* ======================================== */
+/* PROJECT TEXT */
+/* ======================================== */
+
+.project-info {
+    padding-top: 14px;
+}
+
+
+.project-info h3 {
+    margin:
+        0 0 5px;
+
+    font-size:
+        clamp(
+            18px,
+            1.5vw,
+            24px
+        );
+
+    font-weight: 500;
+}
+
+
+.project-info p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    opacity: 0.55;
+}
+
+
+
+/* ======================================== */
+/* CONTACT */
+/* ======================================== */
+
+.contact {
+    min-height: 260px;
+
+    padding:
+        80px 5%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 65px;
+}
+
+
+.contact-link {
+    display: inline-flex;
+
+    flex-direction:
+        column-reverse;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+.contact-link:hover {
+    opacity: 0.5;
+}
+
+
+.contact-label {
+    padding-bottom: 5px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.4
+        );
+}
+
+
+
+/* ======================================== */
+/* EMAIL ICON */
+/* ======================================== */
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+
+    stroke:
+        currentColor;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+
+/* ======================================== */
+/* LINKEDIN ICON */
+/* ======================================== */
+
+.linkedin-icon {
+    width: 24px;
+    height: 24px;
+
+    display:
+        inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1.5px solid
+        currentColor;
+
+    border-radius: 2px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+
+/* ======================================== */
+/* TABLET */
+/* ======================================== */
+
+@media
+(max-width: 1000px) {
+
+
+    .work-intro {
+        grid-template-columns:
+            1fr;
+
+        gap: 40px;
+    }
+
+
+    .work-categories {
+        justify-content:
+            flex-start;
+    }
+
+
+    .project-grid,
+    .project-grid-three {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+
+/* ======================================== */
+/* MOBILE */
+/* ======================================== */
+
+@media
+(max-width: 650px) {
+
+
+    body {
+        padding-top: 68px;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+        height: 68px;
+
+        padding:
+            0 18px;
+    }
+
+
+    .logo {
+        font-size: 12px;
+    }
+
+
+    nav {
+        gap: 13px;
+    }
+
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+
+    /* INTRO */
+
+    .work-intro {
+        padding:
+            70px 20px
+            60px;
+
+        gap: 35px;
+    }
+
+
+    .work-intro h1 {
+        font-size:
+            clamp(
+                42px,
+                13vw,
+                62px
+            );
+    }
+
+
+    .work-categories {
+        gap:
+            10px 18px;
+    }
+
+
+    .work-categories a {
+        font-size: 14px;
+    }
+
+
+
+    /* MARQUEE */
+
+    .work-marquee {
+        padding-bottom: 100px;
+    }
+
+
+    .marquee-group {
+        gap: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .marquee-card {
+        width: 75vw;
+    }
+
+
+
+    /* PROJECT SECTIONS */
+
+    .work-section {
+        padding:
+            30px 20px
+            100px;
+    }
+
+
+    .section-header {
+        margin-bottom: 35px;
+    }
+
+
+    .section-header h2 {
+        font-size:
+            clamp(
+                30px,
+                9vw,
+                44px
+            );
+    }
+
+
+    .project-grid,
+    .project-grid-three {
+        grid-template-columns:
+            1fr;
+
+        gap: 45px;
+    }
+
+
+
+    /* CONTACT */
+
+    .contact {
+        min-height: 220px;
+
+        padding:
+            70px 20px;
+
+        gap: 35px;
+    }
+
+
+    .contact-link {
+        font-size: 17px;
+    }
+
+
+    .contact-icon,
+    .linkedin-icon {
+        width: 21px;
+        height: 21px;
+    }
+
+}

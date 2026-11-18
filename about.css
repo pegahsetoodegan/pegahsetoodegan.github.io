@@ -1,0 +1,1111 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Dela+Gothic+One&display=swap');
+
+
+/* ======================================== */
+/* GENERAL */
+/* ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 78px;
+
+    font-family: "Archivo", sans-serif;
+
+    color: #f8f1fa;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #652b7b 0%,
+            #451652 48%,
+            #270a31 100%
+        );
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ======================================== */
+/* HEADER */
+/* ======================================== */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4%;
+
+    background:
+        rgba(
+            42,
+            8,
+            53,
+            0.78
+        );
+
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+nav a.active {
+    opacity: 0.55;
+}
+
+
+/* ======================================== */
+/* ABOUT */
+/* ======================================== */
+
+.about-hero {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        110px 5%
+        130px;
+
+    overflow: hidden;
+}
+
+
+/* ======================================== */
+/* ABOUT GRID */
+/* ======================================== */
+
+.about-layout {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(360px, 0.85fr);
+
+    gap:
+        clamp(
+            70px,
+            8vw,
+            140px
+        );
+
+    align-items: start;
+}
+
+
+/* ======================================== */
+/* ABOUT TEXT */
+/* ======================================== */
+
+.about-copy {
+    position: relative;
+
+    z-index: 10;
+
+    min-width: 0;
+}
+
+.about-main-title {
+    margin:
+        0 0 60px;
+
+    font-family:
+        "Dela Gothic One",
+        sans-serif;
+
+    font-size:
+        clamp(
+            52px,
+            6vw,
+            90px
+        );
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+.about-text {
+    max-width: 720px;
+}
+
+.about-text p {
+    margin:
+        0 0 28px;
+
+    font-size:
+        clamp(
+            17px,
+            1.35vw,
+            20px
+        );
+
+    line-height: 1.6;
+
+    color: #ede5ef;
+}
+
+
+/* ======================================== */
+/* DOWNLOAD CV */
+/* ======================================== */
+
+.about-download {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding-bottom: 6px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size:
+        clamp(
+            22px,
+            2vw,
+            30px
+        );
+
+    font-weight: 500;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    transition:
+        opacity 0.25s ease;
+}
+
+.about-download:hover {
+    opacity: 0.5;
+}
+
+
+/* ======================================== */
+/* OPENING PHOTO */
+/* ======================================== */
+
+.about-photo-zone {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding-top: 35px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: flex-start;
+}
+
+.opening-photo {
+    width:
+        min(
+            100%,
+            450px
+        );
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    opacity: 0.9;
+
+    transform:
+        rotate(3deg);
+
+    transition:
+        opacity 0.8s ease;
+
+    animation:
+        openingFloat
+        7s
+        ease-in-out
+        infinite;
+}
+
+.opening-photo.faded {
+    opacity: 0.5;
+}
+
+@keyframes openingFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(3deg);
+    }
+
+    50% {
+        transform:
+            translateY(12px)
+            rotate(1deg);
+    }
+}
+
+
+/* ======================================== */
+/* GENERATED PHOTOS */
+/* RIGHT SIDE ONLY */
+/* ======================================== */
+
+.photo-layer {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 44%;
+    height: 100%;
+
+    z-index: 7;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.trail-photo {
+    position: absolute;
+
+    width:
+        clamp(
+            150px,
+            18vw,
+            280px
+        );
+
+    height: auto;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        scale(0.85);
+
+    animation:
+        photoAppear
+        3.2s
+        ease
+        forwards;
+}
+
+@keyframes photoAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(0.85);
+    }
+
+    15% {
+        opacity: 0.9;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(1);
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                -50%,
+                -54%
+            )
+            scale(0.96);
+    }
+}
+
+
+/* ======================================== */
+/* MY JOURNEY */
+/* ======================================== */
+
+.journey-section {
+    width: 100%;
+
+    padding:
+        120px 5%
+        140px;
+}
+
+.journey-main-title {
+    margin:
+        0 0 65px;
+
+    font-family:
+        "Dela Gothic One",
+        sans-serif;
+
+    font-size:
+        clamp(
+            52px,
+            6vw,
+            90px
+        );
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+
+/* ======================================== */
+/* JOURNEY COUNTRIES */
+/* ======================================== */
+
+.journey-countries {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap:
+        14px 20px;
+
+    margin-bottom: 80px;
+
+    font-family:
+        "Dela Gothic One",
+        sans-serif;
+
+    font-size:
+        clamp(
+            27px,
+            3vw,
+            46px
+        );
+
+    line-height: 1.2;
+}
+
+.journey-arrow {
+    opacity: 0.35;
+}
+
+
+/* ======================================== */
+/* JOURNEY STEPS + LINES */
+/* ======================================== */
+
+.journey-steps {
+    width: 100%;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.22
+        );
+}
+
+.journey-steps p {
+    margin: 0;
+
+    padding:
+        22px 0;
+
+    font-size:
+        clamp(
+            20px,
+            2vw,
+            28px
+        );
+
+    line-height: 1.3;
+
+    font-weight: 500;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.22
+        );
+}
+
+
+/* ======================================== */
+/* CV */
+/* ======================================== */
+
+.cv-section {
+    width: 100%;
+
+    padding:
+        120px 5%
+        150px;
+}
+
+.cv-main-title {
+    margin:
+        0 0 90px;
+
+    font-family:
+        "Dela Gothic One",
+        sans-serif;
+
+    font-size:
+        clamp(
+            52px,
+            6vw,
+            90px
+        );
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+
+/* ======================================== */
+/* CV CATEGORY */
+/* ======================================== */
+
+.cv-category {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0;
+
+    padding:
+        65px 0
+        80px;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.22
+        );
+}
+
+.cv-category:last-child {
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.22
+        );
+}
+
+.cv-category h3 {
+    margin:
+        0 0 55px;
+
+    font-size:
+        clamp(
+            24px,
+            2.3vw,
+            34px
+        );
+
+    line-height: 1.2;
+
+    font-weight: 500;
+}
+
+
+/* ======================================== */
+/* CV ENTRY */
+/* ======================================== */
+
+.cv-entry {
+    display: grid;
+
+    grid-template-columns:
+        220px
+        minmax(
+            0,
+            1fr
+        );
+
+    gap: 55px;
+
+    align-items: start;
+
+    padding:
+        0 0
+        35px;
+
+    margin:
+        0 0
+        35px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+}
+
+.cv-entry:last-child {
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+
+/* ======================================== */
+/* CV DATE */
+/* ======================================== */
+
+.cv-date {
+    font-size:
+        clamp(
+            20px,
+            1.8vw,
+            27px
+        );
+
+    line-height: 1.2;
+
+    font-weight: 500;
+
+    opacity: 0.62;
+
+    white-space: nowrap;
+}
+
+
+/* ======================================== */
+/* CV TEXT */
+/* ======================================== */
+
+.cv-entry-content {
+    min-width: 0;
+}
+
+.cv-entry-content h4 {
+    margin:
+        0 0 10px;
+
+    font-size:
+        clamp(
+            25px,
+            2.5vw,
+            38px
+        );
+
+    line-height: 1.15;
+
+    font-weight: 500;
+}
+
+.cv-entry-content p {
+    margin: 0;
+
+    max-width: 800px;
+
+    font-size:
+        clamp(
+            17px,
+            1.5vw,
+            22px
+        );
+
+    line-height: 1.45;
+
+    color: #ded3e2;
+}
+
+
+/* ======================================== */
+/* PRACTICE */
+/* ======================================== */
+
+.practice-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap:
+        12px 14px;
+}
+
+.practice-list span {
+    padding:
+        10px 16px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.28
+        );
+
+    border-radius: 100px;
+
+    font-size: 15px;
+}
+
+
+/* ======================================== */
+/* LANGUAGES */
+/* ======================================== */
+
+.languages {
+    width: 100%;
+
+    max-width: 680px;
+}
+
+.languages div {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding:
+        14px 0;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    font-size: 18px;
+}
+
+.languages div:last-child {
+    border-bottom: none;
+}
+
+.languages div span:last-child {
+    opacity: 0.55;
+}
+
+
+/* ======================================== */
+/* CONTACT */
+/* ======================================== */
+
+.contact {
+    min-height: 260px;
+
+    padding:
+        80px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 65px;
+}
+
+.contact-link {
+    display: inline-flex;
+
+    flex-direction: column-reverse;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+.contact-link > span:last-child {
+    padding-bottom: 5px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.4
+        );
+}
+
+
+/* EMAIL ICON */
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* LINKEDIN ICON */
+
+.linkedin-icon {
+    width: 24px;
+    height: 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1.5px solid
+        currentColor;
+
+    border-radius: 2px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* ======================================== */
+/* TABLET */
+/* ======================================== */
+
+@media
+(max-width: 900px) {
+
+    .about-layout {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 60px;
+    }
+
+    .about-copy {
+        order: 1;
+    }
+
+    .about-photo-zone {
+        order: 2;
+
+        justify-content: center;
+    }
+
+    .photo-layer {
+        display: none;
+    }
+
+    .opening-photo {
+        width:
+            min(
+                70vw,
+                360px
+            );
+    }
+
+    .cv-entry {
+        grid-template-columns:
+            180px
+            minmax(
+                0,
+                1fr
+            );
+
+        gap: 35px;
+    }
+}
+
+
+/* ======================================== */
+/* MOBILE */
+/* ======================================== */
+
+@media
+(max-width: 650px) {
+
+    body {
+        padding-top: 68px;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+        height: 68px;
+
+        padding:
+            0 18px;
+    }
+
+    .logo {
+        font-size: 12px;
+    }
+
+    nav {
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    /* ABOUT */
+
+    .about-hero {
+        padding:
+            70px 20px
+            90px;
+    }
+
+    .about-main-title,
+    .journey-main-title,
+    .cv-main-title {
+        font-size:
+            clamp(
+                42px,
+                13vw,
+                62px
+            );
+    }
+
+    .about-main-title {
+        margin-bottom: 45px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .about-download {
+        font-size: 22px;
+    }
+
+
+    /* JOURNEY */
+
+    .journey-section {
+        padding:
+            90px 20px
+            100px;
+    }
+
+    .journey-main-title {
+        margin-bottom: 45px;
+    }
+
+    .journey-countries {
+        font-size:
+            clamp(
+                23px,
+                7vw,
+                34px
+            );
+
+        gap:
+            10px 13px;
+
+        margin-bottom: 55px;
+    }
+
+    .journey-steps p {
+        padding:
+            18px 0;
+
+        font-size: 20px;
+    }
+
+
+    /* CV */
+
+    .cv-section {
+        padding:
+            90px 20px
+            110px;
+    }
+
+    .cv-main-title {
+        margin-bottom: 70px;
+    }
+
+    .cv-category {
+        padding:
+            45px 0
+            55px;
+    }
+
+    .cv-category h3 {
+        margin-bottom: 40px;
+
+        font-size: 25px;
+    }
+
+    .cv-entry {
+        display: block;
+
+        padding-bottom: 28px;
+
+        margin-bottom: 28px;
+    }
+
+    .cv-date {
+        margin-bottom: 12px;
+
+        font-size: 19px;
+    }
+
+    .cv-entry-content h4 {
+        font-size: 25px;
+    }
+
+    .cv-entry-content p {
+        font-size: 17px;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        min-height: 220px;
+
+        gap: 35px;
+
+        padding:
+            70px 20px;
+    }
+
+    .contact-link {
+        gap: 7px;
+
+        font-size: 17px;
+    }
+
+    .contact-icon,
+    .linkedin-icon {
+        width: 21px;
+        height: 21px;
+    }
+}

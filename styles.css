@@ -1,0 +1,981 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Dela+Gothic+One&display=swap');
+
+
+/* ======================================== */
+/* GENERAL */
+/* ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    padding-top: 78px;
+
+    font-family:
+        "Archivo",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #652b7b 0%,
+            #451652 48%,
+            #270a31 100%
+        );
+
+    color: #f8f1fa;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+
+/* ======================================== */
+/* HEADER */
+/* ======================================== */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 4%;
+
+    background:
+        rgba(
+            42,
+            8,
+            53,
+            0.78
+        );
+
+    backdrop-filter: blur(12px);
+}
+
+
+.logo {
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 16px;
+}
+
+
+nav {
+    display: flex;
+
+    gap: 40px;
+}
+
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+
+
+/* ======================================== */
+/* HERO */
+/* ======================================== */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 1120px;
+
+    overflow: hidden;
+}
+
+
+.arc-stage {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 1080px;
+}
+
+
+
+/* ======================================== */
+/* ARC */
+/* ======================================== */
+
+.arc-svg {
+    position: absolute;
+
+    top: 10px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 108vw;
+
+    min-width: 1200px;
+
+    height: auto;
+
+    overflow: visible;
+}
+
+
+
+/* ======================================== */
+/* ARC TEXT */
+/* ======================================== */
+
+.arc-title {
+    font-family:
+        "Dela Gothic One",
+        sans-serif;
+
+    font-size:
+        clamp(
+            78px,
+            6.4vw,
+            120px
+        );
+
+    fill: #f8f1fa;
+
+    letter-spacing: 1px;
+}
+
+
+#arcText {
+    pointer-events:
+        visiblePainted;
+
+    cursor: default;
+}
+
+
+.arc-measure {
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+
+/* ======================================== */
+/* HERO CENTER */
+/* ======================================== */
+
+.hero-center {
+    position: absolute;
+
+    top: 410px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 10;
+
+    width:
+        min(
+            1100px,
+            90%
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 45px;
+}
+
+
+.hero-description {
+    margin: 0;
+
+    max-width: 900px;
+
+    text-align: center;
+
+    font-size:
+        clamp(
+            24px,
+            2vw,
+            32px
+        );
+
+    line-height: 1.4;
+
+    color: #e2d7e6;
+}
+
+
+
+/* ======================================== */
+/* SELECTED WORK AREA */
+/* ======================================== */
+
+.selected-area {
+    width:
+        min(
+            950px,
+            90vw
+        );
+}
+
+
+.selected-work-link {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+}
+
+
+
+/* ======================================== */
+/* SELECTED WORK RECTANGLE */
+/* ======================================== */
+
+.selected-work {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+        16 / 7;
+
+    min-height: 360px;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.selected-work:hover {
+    transform:
+        scale(0.988);
+}
+
+
+
+/* ======================================== */
+/* HORIZONTAL IMAGE SLIDER */
+/* ======================================== */
+
+.selected-track {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    transition:
+        transform
+        0.55s
+        cubic-bezier(
+            0.65,
+            0,
+            0.35,
+            1
+        );
+
+    will-change: transform;
+}
+
+
+.selected-slide {
+    flex:
+        0 0
+        100%;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+
+/* ======================================== */
+/* ABOUT + ALL WORKS */
+/* ======================================== */
+
+.hero-bottom-links {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 6px;
+}
+
+
+.hero-bottom-links a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    padding-bottom: 4px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.4
+        );
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+.hero-bottom-links a:hover {
+    opacity: 0.5;
+}
+
+
+
+/* ======================================== */
+/* DISCIPLINES */
+/* ======================================== */
+
+.disciplines {
+    padding:
+        65px 5%
+        110px;
+}
+
+
+.disciplines-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 30px;
+}
+
+
+
+/* ======================================== */
+/* DISCIPLINE CARD */
+/* ======================================== */
+
+.discipline-card {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    color: white;
+
+    text-decoration: none;
+
+    background: transparent;
+}
+
+
+
+/* ======================================== */
+/* DISCIPLINE VISUAL */
+/* ======================================== */
+
+.discipline-visual {
+    width: 100%;
+
+    height:
+        clamp(
+            150px,
+            14vw,
+            215px
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    background: transparent;
+
+    overflow: visible;
+}
+
+
+.discipline-visual img {
+    width:
+        clamp(
+            120px,
+            11vw,
+            180px
+        );
+
+    height: auto;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.discipline-card:hover
+.discipline-visual img {
+    transform:
+        scale(1.05);
+}
+
+
+.discipline-card h2 {
+    margin:
+        10px
+        0
+        0;
+
+    font-size:
+        clamp(
+            20px,
+            1.7vw,
+            27px
+        );
+
+    font-weight: 400;
+
+    text-align: center;
+}
+
+
+
+/* ======================================== */
+/* CONTACT */
+/* ======================================== */
+
+.contact {
+    min-height: 250px;
+
+    padding:
+        80px 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contact-links {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 65px;
+}
+
+
+
+/* ======================================== */
+/* CONTACT LINKS */
+/* TEXT ABOVE / ICON BELOW */
+/* ======================================== */
+
+.contact-link {
+    display: inline-flex;
+
+    flex-direction: column-reverse;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+.contact-link:hover {
+    opacity: 0.5;
+}
+
+
+.contact-label {
+    padding-bottom: 5px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.4
+        );
+}
+
+
+
+/* EMAIL ICON */
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    flex-shrink: 0;
+}
+
+
+
+/* LINKEDIN ICON */
+
+.linkedin-mark {
+    width: 24px;
+    height: 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1.5px solid
+        currentColor;
+
+    border-radius: 2px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    flex-shrink: 0;
+}
+
+
+
+/* ======================================== */
+/* HIDDEN H1 */
+/* ======================================== */
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip:
+        rect(
+            0,
+            0,
+            0,
+            0
+        );
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+
+/* ======================================== */
+/* CURSOR GLOW */
+/* ======================================== */
+
+#cursor-glow {
+    position: fixed;
+
+    top: -200px;
+    left: -200px;
+
+    width: 120px;
+    height: 120px;
+
+    z-index: 2000;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    background:
+        radial-gradient(
+            circle,
+
+            rgba(
+                255,
+                190,
+                250,
+                0.25
+            )
+            0%,
+
+            rgba(
+                213,
+                130,
+                255,
+                0.10
+            )
+            40%,
+
+            transparent
+            70%
+        );
+
+    filter:
+        blur(5px);
+}
+
+
+
+/* ======================================== */
+/* CURSOR PARTICLES */
+/* ======================================== */
+
+.particle {
+    position: fixed;
+
+    z-index: 1999;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    background:
+        #ffd8fb;
+
+    box-shadow:
+        0 0 6px
+        #ff9df5,
+
+        0 0 12px
+        #db7cff;
+
+    animation:
+        particleFade
+        0.7s
+        ease-out
+        forwards;
+}
+
+
+@keyframes particleFade {
+
+    from {
+        opacity: 1;
+
+        transform:
+            translate(
+                0,
+                0
+            )
+            scale(1);
+    }
+
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--move-x),
+                var(--move-y)
+            )
+            scale(0);
+    }
+
+}
+
+
+
+/* ======================================== */
+/* MOBILE */
+/* ======================================== */
+
+@media
+(max-width: 750px) {
+
+
+    body {
+        padding-top: 68px;
+    }
+
+
+    .site-header {
+        height: 68px;
+
+        padding:
+            0 18px;
+    }
+
+
+    .logo {
+        font-size: 12px;
+    }
+
+
+    nav {
+        gap: 13px;
+    }
+
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 920px;
+    }
+
+
+    .arc-stage {
+        min-height: 900px;
+    }
+
+
+    .arc-svg {
+        width: 180vw;
+
+        min-width: 900px;
+
+        top: 25px;
+    }
+
+
+    .arc-title {
+        font-size: 80px;
+    }
+
+
+    .hero-center {
+        top: 340px;
+
+        width: 92%;
+
+        gap: 35px;
+    }
+
+
+    .hero-description {
+        max-width: 340px;
+
+        font-size: 18px;
+    }
+
+
+
+    /* SELECTED WORK */
+
+    .selected-area {
+        width: 90vw;
+    }
+
+
+    .selected-work {
+        min-height: 240px;
+
+        aspect-ratio:
+            4 / 3;
+    }
+
+
+    .hero-bottom-links {
+        margin-top: 4px;
+    }
+
+
+    .hero-bottom-links a {
+        font-size: 15px;
+    }
+
+
+
+    /* DISCIPLINES */
+
+    .disciplines {
+        padding:
+            60px 20px
+            90px;
+    }
+
+
+    .disciplines-grid {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            38px 18px;
+    }
+
+
+    .discipline-visual {
+        height: 125px;
+    }
+
+
+    .discipline-visual img {
+        width:
+            min(
+                105px,
+                75%
+            );
+
+        max-height: 115px;
+    }
+
+
+    .discipline-card h2 {
+        margin-top: 8px;
+
+        font-size: 18px;
+    }
+
+
+
+    /* CONTACT */
+
+    .contact {
+        min-height: 220px;
+
+        padding:
+            70px 20px;
+    }
+
+
+    .contact-links {
+        gap: 35px;
+    }
+
+
+    .contact-link {
+        gap: 7px;
+
+        font-size: 17px;
+    }
+
+
+    .contact-icon,
+    .linkedin-mark {
+        width: 21px;
+        height: 21px;
+    }
+
+
+    .linkedin-mark {
+        font-size: 11px;
+    }
+
+
+
+    /* NO CURSOR EFFECT */
+
+    #cursor-glow {
+        display: none;
+    }
+
+}
